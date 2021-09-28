@@ -15,7 +15,7 @@ the network is a combination of protocols that allow devices to see their place 
 
 The multicast animation is indicating the destination devices. By default, a switch will send multicast packets out all ports except the incoming port. However, only the hosts that are part of the multicast group will process the packet.
 
-Network protocols define a common format and set of rules for exchanging messages between devices. Protocols are implemented by end devices and intermediary devices in software, hardware, or both. Each network protocol has its own function, format, and rules for communications.
+Network protocols define a common format and set of rules for exchanging messages between devices. Protocols are implemented by end devices and intermediary devices in software, hardware, or both. Each network protocol has its own function, format, and rules for communications. The table lists the functions of these protocols.
 
 | function | description |
 | ---- | ----- |
@@ -26,9 +26,20 @@ Network protocols define a common format and set of rules for exchanging message
 |Error Detection | This function is used to determine if data became corrupted during transmission. Various protocols that provide error detection include Ethernet, IPv4, IPv6, and TCP. |
 |Application Interface |This function contains information used for process-to-process communications between network applications. For example, when accessing a web page, HTTP or HTTPS protocols are used to communicate between the client and server web processes. |
 
+A message sent over a computer network typically requires the use of several protocols, each one with its own functions and format. From top to bottom
+
+- http: interaction between webserver and web client
+- tcp: individual conversations; ensure packages are delivered
+- IP: send messages from sender to receiver
+- Ethernet: send packages from one nic to another.
+
+A protocol suite is a group of inter-related protocols necessary to perform a communication function.
+
+The lower layers of the stack are concerned with moving data over the network and providing services to the upper layers, which are focused on the content of the message being sent.
+
 ## tcp/IP
 
-TCP/IP protocols are available for the application, transport, and internet layers. There are no TCP/IP protocols in the network access layer. The most common network access layer LAN protocols are Ethernet and WLAN (wireless LAN) protocols. Network access layer protocols are responsible for delivering the IP packet over the physical medium.
+TCP/IP protocols are available for the **application, transport, and internet layers**. There are no TCP/IP protocols in the network access layer. The most common network access layer LAN protocols are Ethernet and WLAN (wireless LAN) protocols. Network access layer protocols are responsible for delivering the IP packet over the physical medium.
 
 ![334](./images/334.png)
 
@@ -84,6 +95,8 @@ TCP/IP protocols are available for the application, transport, and internet laye
 WLAN - Wireless Local Area Network. Defines the rules for wireless signaling across the 2.4 GHz and 5 GHz radio frequencies.
 
 ![351](./images/351.png)
+
+You cannot actually watch real packets travel across a real network. Complex concepts such as how a network operates can be difficult to explain and understand. For this reason, a layered model is used to modularize the operations of a network into manageable layers.
 
 | OSI Model Layer	|Description |
 | ------ | ------ | 
