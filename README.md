@@ -288,5 +288,35 @@ Sw-Floor-1(config)# ip default-gateway 192.168.1.1
 
 `show ip interface brief`
 
+## capa 3 - red
+
+- paquete IP
+- enrutamiento - direccionamiento y ruta más rápida
+
+Direcciones IP de origen y desino NO cambian.
+
+en esta capa se realiza la segmentación de los paquetes en el primer router (gateway)
+
+### Protocolo IP - características
+
+Servicio mínimo - no garantiza que se entregue el paquete.
+
+MTU (unidad de transmisión máxima) --> varios paquetes IP. depende del protocolo de enlace de datos. IPv6 no fragmenta paquetes.
+
+### paquete IPv4
+
+encabezado para garantizar la dirección de destino, información para el procesamiento de capa de red en varios campos.
+
+tamaño máximo de 20 bytes; se transmite en formato binario
+
+```console
+R1# show ip route
+```
+
+- `S*` --> ruta de último recurso estática; si no encuentra ruta/entrada en la tabla de ruteo, sale por acá
+- O --> OSPF - enrutamiento dinámico
+- L --> dirección ip asignada localmente; para enrutar/procesar todos los paquetes IP que vienen dirigidos al router.
+
+
 
 

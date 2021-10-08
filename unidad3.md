@@ -94,9 +94,16 @@ TCP/IP protocols are available for the **application, transport, and internet la
   - Ethernet - Defines the rules for wiring and signaling standards of the network access layer.
 WLAN - Wireless Local Area Network. Defines the rules for wireless signaling across the 2.4 GHz and 5 GHz radio frequencies.
 
+You cannot actually watch real packets travel across a real network. Complex concepts such as how a network operates can be difficult to explain and understand. For this reason, a layered model is used to modularize the operations of a network into manageable layers.
+
+there are two layered models that are used to describe network operations:
+
+- Open System Interconnection (OSI) Reference Model
+- TCP/IP Reference Model
+
 ![351](./images/351.png)
 
-You cannot actually watch real packets travel across a real network. Complex concepts such as how a network operates can be difficult to explain and understand. For this reason, a layered model is used to modularize the operations of a network into manageable layers.
+OSI: describing what must be done at a particular layer, but not prescribing how it should be accomplished. It also describes the interaction of each layer with the layers directly above and below.
 
 | OSI Model Layer	|Description |
 | ------ | ------ | 
@@ -108,6 +115,8 @@ You cannot actually watch real packets travel across a real network. Complex con
 |2 - Data Link|	The data link layer protocols describe methods for exchanging data frames between devices over a common media | 
 |1 - Physical	|The physical layer protocols describe the mechanical, electrical, functional, and procedural means to activate, maintain, and de-activate physical connections for a bit transmission to and from a network device. |
 
+TCP/IP model is sometimes referred to as _the internet model_. The TCP/IP model is a protocol model because it describes the functions that occur at each layer of protocols within the TCP/IP suite.
+
 |TCP/IP Model Layer	| Description |
 | ------ | --------|
 |4 - Application	| Represents data to the user, plus encoding and dialog control.|
@@ -115,5 +124,6 @@ You cannot actually watch real packets travel across a real network. Complex con
 |2 - Internet	| Determines the best path through the network.|
 |1 - Network Access	| Controls the hardware devices and media that make up the network. |
 
-As data moves through the network, it is broken down into smaller pieces and identified so that the pieces can be put back together when they arrive at the destination. Each piece is assigned a specific name (protocol data unit [PDU]) and associated with a specific layer of the TCP/IP and OSI models.
+_Segmentation_ is the process of dividing a stream of data into smaller units for transmissions over the network. As data moves through the network, it is broken down into smaller pieces and identified so that the pieces can be put back together when they arrive at the destination. Each piece is assigned a specific name (protocol data unit [PDU]) and associated with a specific layer of the TCP/IP and OSI models.
 
+_Multiplexing_: large amounts of data can be sent over the network without tying up a communications link. This allows many different conversations to be interleaved on the network called multiplexing.
